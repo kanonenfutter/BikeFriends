@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mainmenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="eis.bikefriends.MainmenuActivity">
+
+    <Button
+        android:text="Einstellungen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuSettings"
+        tools:text="Einstellungen"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Debug1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuDebug1"
+        tools:text="Debug1"
+        android:layout_below="@+id/menuCalibration"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp" />
+
+    <Button
+        android:text="Mein Profil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuMyProfile"
+        tools:text="Mein Profil"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Veranstaltungen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuEvents"
+        tools:text="Veranstaltungen"
+        android:layout_marginTop="63dp"
+        android:layout_below="@+id/menuMyProfile"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Matching"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuMatching"
+        tools:text="Matching"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/menuEvents"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="kalibrierung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuCalibration"
+        tools:text="Fahrprofil kalibrierung"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/menuMatching"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

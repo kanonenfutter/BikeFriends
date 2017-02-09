@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+    <!--<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>-->
+    <script type="text/javascript" src="/javascripts/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form action="/profiles" method="post" target="hiddenFrame">
+    	<button class="">submit data</button>
+    </form>
+
+    <form name='form' id='form' action='/profiles' method='POST'>
+        <input id="username" type="text" value="dummy">
+        <input id="id" type="text" value="1234">
+        <input id="bikesports" type="text" value="Mountainbike,Rennrad">
+        <input id="averageSpeed" type="number" value="30">
+        <input id="averageSessionDistance" type="number" value="10">
+    	<button id="submit" >submit
+    	</button>
+        <button id="submit2" onclick="send()">Send</button>
+    </form>
+    <form name='form_event' id='form_event' action='/events' method='POST'>
+        <input id="title" type="text" value="Titel"Radtour am Rheinufer>
+        <input id="description" type="text" value="Lorem Ipsum. Details. Informationen.">
+        <input id="date" type="date" value="24/01/2016">
+        <input id="start" type="text" value="Köln">
+        <input id="destination" type="text" value="Düsseldorf">
+        <input id="participants" type="text" value="Norbert,Thomas,Tina,Rebecca">
+        <button id="submit_event" >submit</button>
+        <!--<button id="submit_event" onclick="send2()">Send</button>-->
+    </form>
+   <script type="text/javascript">
+    // Definition der 'action'
+    $('#form').submit(function(event) {
+        //Verhindert das Standard-Verhalten von submit
+        event.preventDefault();
+        // Formulardaten werden als JSON Objekt gespeichert
+        var bikesports_array = $('#bikesports').val().split(',');
+        var data = {
+            id: $('#id').val(),
+            username: $('#username').val(),
+            bikesports: bikesports_array,
+            averageSpeed: parseInt($('#averageSpeed').val()),
+            averageSessionDistance: parseInt($('#averageSessionDistance').val())
+        };
+        // post auf Ressource '/profiles'
+        var ajaxPost = $.ajax({
+            type: 'POST',
+            url: '/profiles',
+            data: JSON.stringify(data),
+            contentType: 'application/json'
+            //dataType: "json"
+        }).done(function(data) {
+            alert('Done.('+ JSON.stringify(data) + ')');
+            // Formular wird zurueckgesetzt
+            $('#form')[0].reset();
+            location.href = "/";
+        }).fail(function(e) {
+            alert('Fail. (' + JSON.stringify(e) + ')');
+
+        });
+    });
+    function send()
+    {
+        $.ajax({
+            type: "post",
+            url: '/profiles',
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(data)
+        }).done(function(data) {
+            alert("response" + data);
+        });
+    }
+    // EVENT Erstellung
+    $('#form_event').submit(function(event) {
+        //Verhindert das Standard-Verhalten von submit
+        event.preventDefault();
+        // Formulardaten werden als JSON Objekt gespeichert
+        var participants_array = $('#participants').val().split(',');
+        var data = {
+            title: $('#title').val(),
+            description: $('#description').val(),
+            date: $('#date').val(),
+            start: $('#start').val(),
+            destination: $('#destination').val(),
+            participants: participants_array
+        };
+        // post auf Ressource '/events'
+        var ajaxPost = $.ajax({
+            type: 'POST',
+            url: '/events',
+            data: JSON.stringify(data),
+            contentType: 'application/json'
+            //dataType: "json"
+        }).done(function(data) {
+            alert('Done.('+ JSON.stringify(data) + ')');
+            // Formular wird zurueckgesetzt
+            $('#form_event')[0].reset();
+            location.href = "/";
+        }).fail(function(e) {
+            alert('Fail. (' + JSON.stringify(e) + ')');
+
+        });
+    });
+	</script>
+    
+  <iframe name="hiddenFrame" class="hide"></iframe>
+  </body>
+</html>

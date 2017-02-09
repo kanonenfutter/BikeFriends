@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "35485526184",
+    "firebase_url": "https://eisbikefriends.firebaseio.com",
+    "project_id": "eisbikefriends",
+    "storage_bucket": "eisbikefriends.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35485526184:android:86b86cefd8ccddfc",
+        "android_client_info": {
+          "package_name": "eis.bikefriends"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35485526184-c46785m1vs7gm6c2go5gq7p5p3s3emih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eis.bikefriends",
+            "certificate_hash": "76D0ACD3402F3B638ADFC8C1D015214132784A5B"
+          }
+        },
+        {
+          "client_id": "35485526184-tf1snajaqlcv3ten38p5jfrg7tfpqqna.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eis.bikefriends",
+            "certificate_hash": "BDFCD2D9FD49675DD71F2D813033D32893AB527D"
+          }
+        },
+        {
+          "client_id": "35485526184-3on9tgmnmd36poiegk4g1km1ofofv4ia.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eis.bikefriends",
+            "certificate_hash": "992576E01E8832E8835E1B527A29114D36C3AAA6"
+          }
+        },
+        {
+          "client_id": "35485526184-42bqcr2c1da6kpdfaf2916ermrovfien.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfXCRxu4pLYkcCutVtQiaP_TCXgHZt7Ro"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35485526184-42bqcr2c1da6kpdfaf2916ermrovfien.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
